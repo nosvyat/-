@@ -1,5 +1,5 @@
 import { state } from "./state.js";
-import { updateGame } from "./main.js";
+import { updateGame } from "./game.js";
 
 const buyStarBtn = document.getElementById("buyStar");
 const buyPlanetBtn = document.getElementById("buyPlanet");
