@@ -1,0 +1,43 @@
+import { state } from "./state.js";
+import { updateUI } from "./ui.js";
+
+const upgradeStarsBtn = document.getElementById("upgradeStars");
+const upgradePlanetsBtn = document.getElementById("upgradePlanets");
+const upgradeUniverseBtn = document.getElementById("upgradeUniverse");
+
+function upgradeStars() {
+  if (state.energy < state.starUpgradeCost) return;
+
+  state.energy -= state.starUpgradeCost;
+  state.starLevel += 1;
+  state.starUpgradeCost = Math.floor(state.starUpgradeCost * 1.4);
+
+  updateUI();
+}
+
+function upgradePlanets() {
+  if (state.energy < state.planetUpgradeCost) return;
+
+  state.energy -= state.planetUpgradeCost;
+  state.planetLevel += 1;
+  state.planetUpgradeCost = Math.floor(state.planetUpgradeCost * 1.4);
+
+  updateUI();
+}
+
+function upgradeUniverse() {
+  if (state.energy < state.universeUpgradeCost) return;
+
+  state.energy -= state.universeUpgradeCost;
+  state.universeLevel += 1;
+  state.tapPower += 1;
+  state.universeUpgradeCost = Math.floor(state.universeUpgradeCost * 1.5);
+
+  updateUI();
+}
+
+upgradeStarsBtn.addEventListener("click", upgradeStars);
+upgradePlanetsBtn.addEventListener("click", upgradePlanets);
+upgradeUniverseBtn.addEventListener("click", upgradeUniverse);
+
+export { upgradeStars, upgradePlanets, upgradeUniverse };
