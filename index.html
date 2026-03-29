@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Universe Up</title>
+
+  <!-- Основные стили -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- 🔝 Верхняя панель -->
+    <header class="appbar">
+      <div class="brand">
+        <div class="logo">🌌</div>
+        <div>
+          <h1>Universe Up</h1>
+          <p>Создай свою вселенную</p>
+        </div>
+      </div>
+
+      <div class="energy" id="energy">⚡ 0</div>
+    </header>
+
+    <!-- 📊 Статы -->
+    <section class="stats">
+      <div class="stat">
+        <div class="label">Доход</div>
+        <div class="value" id="income">0/с</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Вселенная</div>
+        <div class="value" id="universeLevel">1 ур.</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Объекты</div>
+        <div class="value">
+          <span id="stars">0</span> ⭐
+          <span id="planets">0</span> 🪐
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌌 Сцена -->
+    <main class="scene">
+      <div class="universe" id="universe">
+        <div class="core" id="core"></div>
+      </div>
+    </main>
+
+    <!-- ⚡ Быстрые кнопки -->
+    <section class="actions">
+      <button id="tapBtn">⚡ Качать энергию</button>
+    </section>
+
+    <!-- 📦 Панель вкладок -->
+    <section class="panel">
+
+      <!-- Покупка -->
+      <div class="tab active" id="tab-shop">
+        <button id="buyStar">⭐ Купить звезду</button>
+        <button id="buyPlanet">🪐 Купить планету</button>
+      </div>
+
+      <!-- Прокачка -->
+      <div class="tab" id="tab-upgrades">
+        <button id="upgradeStars">⬆️ Улучшить звёзды</button>
+        <button id="upgradePlanets">⬆️ Улучшить планеты</button>
+        <button id="upgradeUniverse">🌌 Улучшить вселенную</button>
+      </div>
+
+      <!-- Инфо -->
+      <div class="tab" id="tab-info">
+        <p>Энергия: <span id="infoEnergy">0</span></p>
+        <p>Доход: <span id="infoIncome">0</span></p>
+      </div>
+
+    </section>
+
+    <!-- 🔽 Нижняя навигация -->
+    <nav class="bottom-nav">
+      <button data-tab="shop" class="nav-btn active">Покупка</button>
+      <button data-tab="upgrades" class="nav-btn">Прокачка</button>
+      <button data-tab="info" class="nav-btn">Инфо</button>
+    </nav>
+
+  </div>
+
+  <!-- JS (модули) -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+      </html>
