@@ -1,5 +1,5 @@
 import { state } from "./state.js";
-import { updateUI } from "./ui.js";
+import { updateGame } from "./main.js";
 
 const upgradeStarsBtn = document.getElementById("upgradeStars");
 const upgradePlanetsBtn = document.getElementById("upgradePlanets");
@@ -12,7 +12,7 @@ function upgradeStars() {
   state.starLevel += 1;
   state.starUpgradeCost = Math.floor(state.starUpgradeCost * 1.4);
 
-  updateUI();
+  updateGame();
 }
 
 function upgradePlanets() {
@@ -22,7 +22,7 @@ function upgradePlanets() {
   state.planetLevel += 1;
   state.planetUpgradeCost = Math.floor(state.planetUpgradeCost * 1.4);
 
-  updateUI();
+  updateGame();
 }
 
 function upgradeUniverse() {
@@ -33,7 +33,7 @@ function upgradeUniverse() {
   state.tapPower += 1;
   state.universeUpgradeCost = Math.floor(state.universeUpgradeCost * 1.5);
 
-  updateUI();
+  updateGame();
 }
 
 upgradeStarsBtn.addEventListener("click", upgradeStars);
