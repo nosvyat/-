@@ -284,3 +284,78 @@ button {
     padding: 9px 10px;
   }
   }
+
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  animation-name: orbit-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-object-body {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.star-body {
+  background: radial-gradient(circle at 35% 35%, #fff8db, #ffd968 55%, #ff9742 100%);
+  box-shadow: 0 0 18px rgba(255, 220, 120, 0.42);
+}
+
+.planet-body {
+  box-shadow: 0 0 16px rgba(106, 233, 255, 0.18);
+}
+
+.planet-1 {
+  background: radial-gradient(circle at 35% 35%, #baf4ff, #4dd0ff 65%, #2f77ff);
+}
+
+.planet-2 {
+  background: radial-gradient(circle at 35% 35%, #ffe0b8, #ffb460 65%, #d86b30);
+}
+
+.planet-3 {
+  background: radial-gradient(circle at 35% 35%, #def7bc, #7fdd7a 65%, #2c9a5c);
+}
+
+.planet-4 {
+  background: radial-gradient(circle at 35% 35%, #f2dcff, #c58bff 60%, #6c4ed7);
+}
+
+.floating-energy {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  color: var(--good);
+  pointer-events: none;
+  text-shadow: 0 0 14px rgba(83, 212, 157, 0.35);
+  animation: float-up 0.9s ease-out forwards;
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -120%);
+  }
+  }
