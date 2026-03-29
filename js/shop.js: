@@ -1,0 +1,30 @@
+import { state } from "./state.js";
+import { updateUI } from "./ui.js";
+
+const buyStarBtn = document.getElementById("buyStar");
+const buyPlanetBtn = document.getElementById("buyPlanet");
+
+function buyStar() {
+  if (state.energy < state.starCost) return;
+
+  state.energy -= state.starCost;
+  state.stars += 1;
+  state.starCost = Math.floor(state.starCost * 1.35);
+
+  updateUI();
+}
+
+function buyPlanet() {
+  if (state.energy < state.planetCost) return;
+
+  state.energy -= state.planetCost;
+  state.planets += 1;
+  state.planetCost = Math.floor(state.planetCost * 1.3);
+
+  updateUI();
+}
+
+buyStarBtn.addEventListener("click", buyStar);
+buyPlanetBtn.addEventListener("click", buyPlanet);
+
+export { buyStar, buyPlanet };
