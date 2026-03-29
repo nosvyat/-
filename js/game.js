@@ -1,5 +1,6 @@
 import { state } from "./state.js";
 import { updateUI } from "./ui.js";
+import { renderScene, handleTapEffect } from "./scene.js";
 
 function recalculateIncome() {
   const starIncome = state.stars * state.starLevel * 2;
@@ -11,6 +12,7 @@ function recalculateIncome() {
 function updateGame() {
   recalculateIncome();
   updateUI();
+  renderScene();
 }
 
 function runPassiveIncome() {
@@ -20,6 +22,7 @@ function runPassiveIncome() {
 
 function tapEnergy() {
   state.energy += state.tapPower;
+  handleTapEffect();
   updateGame();
 }
 
