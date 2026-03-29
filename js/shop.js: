@@ -1,5 +1,5 @@
 import { state } from "./state.js";
-import { updateUI } from "./ui.js";
+import { updateGame } from "./main.js";
 
 const buyStarBtn = document.getElementById("buyStar");
 const buyPlanetBtn = document.getElementById("buyPlanet");
@@ -11,7 +11,7 @@ function buyStar() {
   state.stars += 1;
   state.starCost = Math.floor(state.starCost * 1.35);
 
-  updateUI();
+  updateGame();
 }
 
 function buyPlanet() {
@@ -21,7 +21,7 @@ function buyPlanet() {
   state.planets += 1;
   state.planetCost = Math.floor(state.planetCost * 1.3);
 
-  updateUI();
+  updateGame();
 }
 
 buyStarBtn.addEventListener("click", buyStar);
